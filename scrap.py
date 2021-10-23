@@ -320,13 +320,13 @@ print(u.bined)
 print(u.hexed)
 
 
-# In[30]:
+# In[18]:
 
 
 u.df.iat[-2, 3]
 
 
-# In[18]:
+# In[19]:
 
 
 print(''.join(str(e) for e in u.df['!= 0']))
@@ -340,7 +340,7 @@ print(f'{myTotal:,}')
 print((myHexInt/myTotal)*100)
 
 
-# In[19]:
+# In[20]:
 
 
 class Crash():
@@ -362,21 +362,21 @@ class Crash():
             self.good = 1
 
 
-# In[20]:
+# In[21]:
 
 
 class Crexi(Divisible):
     pass
 
 
-# In[26]:
+# In[22]:
 
 
 r = Crexi(rexi)
 r.hash
 
 
-# In[21]:
+# In[23]:
 
 
 w = Crash(rexi)
@@ -397,7 +397,7 @@ print(txt)
 print(w.d.df)
 
 
-# In[22]:
+# In[24]:
 
 
 class Blaze:
@@ -476,4 +476,60 @@ class Blaze:
                 
         except KeyboardInterrupt:
             print('\n')
+
+
+# In[39]:
+
+
+class AprenderBlaze:
+    def __init__(self, hashFromCrashPoint):
+        self.client_seed = "0000000000000000000415ebb64b0d51ccee0bb55826e43846e5bea777d91966"
+        self.seed = hash_from_crash_point
+        sef.data = {
+            "point":[],
+            "seeds":[self.seed],
+            "hmacs":[],
+        }
+        
+    def hmacFromSeed(self, seed):
+        hmac = hmac.new(
+                    str.encode(seed),
+                    str.encode(self.client_seed),
+                    hashlib.sha256
+                ).hexdigest()
+        
+        if seed == self.seed:
+            self.hmac = hmac
+            
+        self.data["hmacs"].append(hmac)
+    
+        
+    def generateSeeds(self, n=10000):
+        for x in range(n):
+            (
+                self.data["seeds"]
+                .append(hashlib
+                        .sha256(str.encode(self.data["seeds"][x]))
+                        .hexdigest())
+            )
+            #print(len(chain),chain[len(chain)-1])
+        
+        
+    def generateHmacs(self):
+        for seed in self.data["seeds"]:
+            hmacFromSeed(seed)
+            
+            
+            
+            
+
+
+# In[56]:
+
+
+gist = {}
+
+gist['test'] = [item for item in ["abc"]]
+gist['test'] += [item for item in ["def"]]
+gist['test']
 
