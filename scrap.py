@@ -1,7 +1,7 @@
 #!/usr/bin/env python
 # coding: utf-8
 
-# In[1]:
+# In[91]:
 
 
 import pandas as pd
@@ -18,7 +18,7 @@ from selenium.webdriver.common.by import By # find_element_by_xpath == find_elem
 from selenium.webdriver.support.ui import WebDriverWait # Explicit waits
 from selenium.webdriver.support import expected_conditions as EC #conditionits for explicit waits
 
-pd.set_option('max_colwidth', 17)
+pd.set_option('max_colwidth', 70)
 
 print('do')
 
@@ -340,20 +340,20 @@ print(f'{myTotal:,}')
 print((myHexInt/myTotal)*100)
 
 
-# In[20]:
+# In[114]:
 
 
 class Crash():
-    def __init__(self, hashHmac=None):
+    def __init__(self, hashHmac):
         self.hash = hashHmac
         self.d = Divisible(self.hash, 15)
         self.h = int(self.hash[0:int(52/4)], 16)
         self.e = int(pow(2, 52))
         self.point = float(format((floor((100 * self.e - self.h) / (self.e - self.h)) / 100), ".2f"))
         self.scale = (self.h/self.e) * 100
-        self.deci = int(self.d.bined, 2)
-        self.bina = self.d.bined
-        self.zero = None
+        self.decbin = (int(self.d.bined, 2) / int(''.join('1' for item in range(16)), 2)) * 100
+        self.dechex = (int(self.d.hexed, 16)/ int(''.join('e' for item in range(16)), 16)) * 100
+        self.zero = 0
         self.good = 0
         if self.d.divisible:
             self.zero = self.point
@@ -376,16 +376,17 @@ r = Crexi(rexi)
 r.hash
 
 
-# In[23]:
+# In[115]:
 
 
 w = Crash(rexi)
 
 wkeys = ['bina', 'd', 'deci', 'e', 'h', 'hash', 'point', 'scale', 'zero', 'good']
 
-print(w.bina)
+print(w.d.bined)
 print(w.d.divisible)
-print(w.deci)
+print(w.decbin)
+print(w.dechex)
 print(w.e)
 print(w.h)
 print(w.hash)
@@ -478,33 +479,32 @@ class Blaze:
             print('\n')
 
 
-# In[39]:
+# In[117]:
 
 
-class AprenderBlaze:
+class LearnBlaze:
     def __init__(self, hashFromCrashPoint):
         self.client_seed = "0000000000000000000415ebb64b0d51ccee0bb55826e43846e5bea777d91966"
-        self.seed = hash_from_crash_point
-        sef.data = {
+        self.maxHash = int(''.join('f' for item in range(64)), 16)
+        #self.maxHmac = int(''.join('e' for item in range(64)), 16)
+        self.seed = hashFromCrashPoint
+        self.data = {
+            "good":[],
             "point":[],
+            "zeros":[],
             "seeds":[self.seed],
             "hmacs":[],
+            "divbin":[],
+            "divhex":[],
         }
         
-    def hmacFromSeed(self, seed):
-        hmac = hmac.new(
-                    str.encode(seed),
-                    str.encode(self.client_seed),
-                    hashlib.sha256
-                ).hexdigest()
+        self.genSeeds(n=10)
+        self.genHmacs()
+        self.genPoints()
+        self.numerize()
         
-        if seed == self.seed:
-            self.hmac = hmac
-            
-        self.data["hmacs"].append(hmac)
-    
-        
-    def generateSeeds(self, n=10000):
+    def genSeeds(self, n=10000):
+        # first, n seeds are needed
         for x in range(n):
             (
                 self.data["seeds"]
@@ -512,24 +512,81 @@ class AprenderBlaze:
                         .sha256(str.encode(self.data["seeds"][x]))
                         .hexdigest())
             )
-            #print(len(chain),chain[len(chain)-1])
+        self.data["seeds"].reverse()
         
-        
-    def generateHmacs(self):
+    def genHmacs(self):
+        #hmacs for each seed
         for seed in self.data["seeds"]:
-            hmacFromSeed(seed)
+            (
+                self.data["hmacs"]
+                .append(
+                    hmac.new(
+                        str.encode(seed),
+                        str.encode(self.client_seed),
+                        hashlib.sha256
+                    ).hexdigest()
+                )
+            )
+    
+    def genPoints(self):
+        for eachmac in self.data["hmacs"]:
+            crash = Crash(eachmac)
+            self.data["point"].append(crash.point)
+            self.data["good"].append(crash.good)
+            self.data["zeros"].append(crash.zero)
+            self.data["divbin"].append(crash.decbin)
+            self.data["divhex"].append(crash.dechex)
+                
+    def numerize(self):
+        seeds = self.data["seeds"]
+        hmacs = self.data["hmacs"]
+        for x in range(len(seeds)):
+            seeds[x] = (int(seeds[x], 16) / self.maxHash) * 100
             
+        for y in range(len(hmacs)):
+            hmacs[y] = (int(hmacs[y], 16) / self.maxHash) * 100
             
-            
-            
+j = LearnBlaze(aleatory_captured_hashes[0])
+hf = pd.DataFrame(j.data)
+print(hf)
 
 
-# In[56]:
+# In[45]:
 
 
-gist = {}
+gist = [i*2 for i in range(10)]
+gist.reverse()
+gist
 
-gist['test'] = [item for item in ["abc"]]
-gist['test'] += [item for item in ["def"]]
-gist['test']
+
+# In[47]:
+
+
+my = {'hm':gist}
+my['hm'].reverse()
+print(my['hm'])
+
+
+# In[64]:
+
+
+aleSeed = int(aleatory_captured_hashes[2], 16)
+maxSeed = int(''.join('f' for item in range(64)), 16)
+
+print(maxSeed)
+print(aleSeed)
+print((aleSeed/maxSeed)*100)
+
+
+# In[134]:
+
+
+aa = 9.5
+distancias = [14.9, 14.9+14.1]
+gas = 7
+retorno = 2.3
+
+
+for x in distancias:
+    print(((x / aa) * gas) * retorno)
 

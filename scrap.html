@@ -14515,7 +14515,7 @@ a.anchor-link {
 <div class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
 <div class="jp-Cell-inputWrapper">
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[1]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[91]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
      <div class="CodeMirror cm-s-jupyter">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
@@ -14532,7 +14532,7 @@ a.anchor-link {
 <span class="kn">from</span> <span class="nn">selenium.webdriver.support.ui</span> <span class="kn">import</span> <span class="n">WebDriverWait</span> <span class="c1"># Explicit waits</span>
 <span class="kn">from</span> <span class="nn">selenium.webdriver.support</span> <span class="kn">import</span> <span class="n">expected_conditions</span> <span class="k">as</span> <span class="n">EC</span> <span class="c1">#conditionits for explicit waits</span>
 
-<span class="n">pd</span><span class="o">.</span><span class="n">set_option</span><span class="p">(</span><span class="s1">&#39;max_colwidth&#39;</span><span class="p">,</span> <span class="mi">17</span><span class="p">)</span>
+<span class="n">pd</span><span class="o">.</span><span class="n">set_option</span><span class="p">(</span><span class="s1">&#39;max_colwidth&#39;</span><span class="p">,</span> <span class="mi">70</span><span class="p">)</span>
 
 <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;do&#39;</span><span class="p">)</span>
 </pre></div>
@@ -15421,20 +15421,20 @@ d9399ea026260d9a
 </div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
 <div class="jp-Cell-inputWrapper">
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[20]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[114]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
      <div class="CodeMirror cm-s-jupyter">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="k">class</span> <span class="nc">Crash</span><span class="p">():</span>
-    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">hashHmac</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
+    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">hashHmac</span><span class="p">):</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">hash</span> <span class="o">=</span> <span class="n">hashHmac</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">d</span> <span class="o">=</span> <span class="n">Divisible</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">hash</span><span class="p">,</span> <span class="mi">15</span><span class="p">)</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">h</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">hash</span><span class="p">[</span><span class="mi">0</span><span class="p">:</span><span class="nb">int</span><span class="p">(</span><span class="mi">52</span><span class="o">/</span><span class="mi">4</span><span class="p">)],</span> <span class="mi">16</span><span class="p">)</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">e</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="nb">pow</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span> <span class="mi">52</span><span class="p">))</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">point</span> <span class="o">=</span> <span class="nb">float</span><span class="p">(</span><span class="nb">format</span><span class="p">((</span><span class="n">floor</span><span class="p">((</span><span class="mi">100</span> <span class="o">*</span> <span class="bp">self</span><span class="o">.</span><span class="n">e</span> <span class="o">-</span> <span class="bp">self</span><span class="o">.</span><span class="n">h</span><span class="p">)</span> <span class="o">/</span> <span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">e</span> <span class="o">-</span> <span class="bp">self</span><span class="o">.</span><span class="n">h</span><span class="p">))</span> <span class="o">/</span> <span class="mi">100</span><span class="p">),</span> <span class="s2">&quot;.2f&quot;</span><span class="p">))</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">scale</span> <span class="o">=</span> <span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">h</span><span class="o">/</span><span class="bp">self</span><span class="o">.</span><span class="n">e</span><span class="p">)</span> <span class="o">*</span> <span class="mi">100</span>
-        <span class="bp">self</span><span class="o">.</span><span class="n">deci</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">d</span><span class="o">.</span><span class="n">bined</span><span class="p">,</span> <span class="mi">2</span><span class="p">)</span>
-        <span class="bp">self</span><span class="o">.</span><span class="n">bina</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">d</span><span class="o">.</span><span class="n">bined</span>
-        <span class="bp">self</span><span class="o">.</span><span class="n">zero</span> <span class="o">=</span> <span class="kc">None</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">decbin</span> <span class="o">=</span> <span class="p">(</span><span class="nb">int</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">d</span><span class="o">.</span><span class="n">bined</span><span class="p">,</span> <span class="mi">2</span><span class="p">)</span> <span class="o">/</span> <span class="nb">int</span><span class="p">(</span><span class="s1">&#39;&#39;</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="s1">&#39;1&#39;</span> <span class="k">for</span> <span class="n">item</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">16</span><span class="p">)),</span> <span class="mi">2</span><span class="p">))</span> <span class="o">*</span> <span class="mi">100</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">dechex</span> <span class="o">=</span> <span class="p">(</span><span class="nb">int</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">d</span><span class="o">.</span><span class="n">hexed</span><span class="p">,</span> <span class="mi">16</span><span class="p">)</span><span class="o">/</span> <span class="nb">int</span><span class="p">(</span><span class="s1">&#39;&#39;</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="s1">&#39;e&#39;</span> <span class="k">for</span> <span class="n">item</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">16</span><span class="p">)),</span> <span class="mi">16</span><span class="p">))</span> <span class="o">*</span> <span class="mi">100</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">zero</span> <span class="o">=</span> <span class="mi">0</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">good</span> <span class="o">=</span> <span class="mi">0</span>
         <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">d</span><span class="o">.</span><span class="n">divisible</span><span class="p">:</span>
             <span class="bp">self</span><span class="o">.</span><span class="n">zero</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">point</span>
@@ -15504,16 +15504,17 @@ d9399ea026260d9a
 </div><div class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
 <div class="jp-Cell-inputWrapper">
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[23]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[115]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
      <div class="CodeMirror cm-s-jupyter">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">w</span> <span class="o">=</span> <span class="n">Crash</span><span class="p">(</span><span class="n">rexi</span><span class="p">)</span>
 
 <span class="n">wkeys</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;bina&#39;</span><span class="p">,</span> <span class="s1">&#39;d&#39;</span><span class="p">,</span> <span class="s1">&#39;deci&#39;</span><span class="p">,</span> <span class="s1">&#39;e&#39;</span><span class="p">,</span> <span class="s1">&#39;h&#39;</span><span class="p">,</span> <span class="s1">&#39;hash&#39;</span><span class="p">,</span> <span class="s1">&#39;point&#39;</span><span class="p">,</span> <span class="s1">&#39;scale&#39;</span><span class="p">,</span> <span class="s1">&#39;zero&#39;</span><span class="p">,</span> <span class="s1">&#39;good&#39;</span><span class="p">]</span>
 
-<span class="nb">print</span><span class="p">(</span><span class="n">w</span><span class="o">.</span><span class="n">bina</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">w</span><span class="o">.</span><span class="n">d</span><span class="o">.</span><span class="n">bined</span><span class="p">)</span>
 <span class="nb">print</span><span class="p">(</span><span class="n">w</span><span class="o">.</span><span class="n">d</span><span class="o">.</span><span class="n">divisible</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="n">w</span><span class="o">.</span><span class="n">deci</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">w</span><span class="o">.</span><span class="n">decbin</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">w</span><span class="o">.</span><span class="n">dechex</span><span class="p">)</span>
 <span class="nb">print</span><span class="p">(</span><span class="n">w</span><span class="o">.</span><span class="n">e</span><span class="p">)</span>
 <span class="nb">print</span><span class="p">(</span><span class="n">w</span><span class="o">.</span><span class="n">h</span><span class="p">)</span>
 <span class="nb">print</span><span class="p">(</span><span class="n">w</span><span class="o">.</span><span class="n">hash</span><span class="p">)</span>
@@ -15544,12 +15545,13 @@ d9399ea026260d9a
 <div class="jp-RenderedText jp-OutputArea-output" data-mime-type="text/plain">
 <pre>1111111011110111
 False
-65271
+99.59716182192722
+90.91451312121815
 4503599627370496
 4174635979893413
 ed4cf2ea5eaa5e89dd5e9443a7817b3ed4c3f3105e70b67aa10d4aa4415166a9
 13.56
-None
+0
 92.69553968612539
 good
      x val_i bitwised hex_hash int_hash bit+int val_f != 0
@@ -15666,36 +15668,35 @@ good
 </div>
 </div>
 
-</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
 <div class="jp-Cell-inputWrapper">
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[39]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[117]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
      <div class="CodeMirror cm-s-jupyter">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="k">class</span> <span class="nc">AprenderBlaze</span><span class="p">:</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="k">class</span> <span class="nc">LearnBlaze</span><span class="p">:</span>
     <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">hashFromCrashPoint</span><span class="p">):</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">client_seed</span> <span class="o">=</span> <span class="s2">&quot;0000000000000000000415ebb64b0d51ccee0bb55826e43846e5bea777d91966&quot;</span>
-        <span class="bp">self</span><span class="o">.</span><span class="n">seed</span> <span class="o">=</span> <span class="n">hash_from_crash_point</span>
-        <span class="n">sef</span><span class="o">.</span><span class="n">data</span> <span class="o">=</span> <span class="p">{</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">maxHash</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="s1">&#39;&#39;</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="s1">&#39;f&#39;</span> <span class="k">for</span> <span class="n">item</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">64</span><span class="p">)),</span> <span class="mi">16</span><span class="p">)</span>
+        <span class="c1">#self.maxHmac = int(&#39;&#39;.join(&#39;e&#39; for item in range(64)), 16)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">seed</span> <span class="o">=</span> <span class="n">hashFromCrashPoint</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">data</span> <span class="o">=</span> <span class="p">{</span>
+            <span class="s2">&quot;good&quot;</span><span class="p">:[],</span>
             <span class="s2">&quot;point&quot;</span><span class="p">:[],</span>
+            <span class="s2">&quot;zeros&quot;</span><span class="p">:[],</span>
             <span class="s2">&quot;seeds&quot;</span><span class="p">:[</span><span class="bp">self</span><span class="o">.</span><span class="n">seed</span><span class="p">],</span>
             <span class="s2">&quot;hmacs&quot;</span><span class="p">:[],</span>
+            <span class="s2">&quot;divbin&quot;</span><span class="p">:[],</span>
+            <span class="s2">&quot;divhex&quot;</span><span class="p">:[],</span>
         <span class="p">}</span>
         
-    <span class="k">def</span> <span class="nf">hmacFromSeed</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">seed</span><span class="p">):</span>
-        <span class="n">hmac</span> <span class="o">=</span> <span class="n">hmac</span><span class="o">.</span><span class="n">new</span><span class="p">(</span>
-                    <span class="nb">str</span><span class="o">.</span><span class="n">encode</span><span class="p">(</span><span class="n">seed</span><span class="p">),</span>
-                    <span class="nb">str</span><span class="o">.</span><span class="n">encode</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">client_seed</span><span class="p">),</span>
-                    <span class="n">hashlib</span><span class="o">.</span><span class="n">sha256</span>
-                <span class="p">)</span><span class="o">.</span><span class="n">hexdigest</span><span class="p">()</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">genSeeds</span><span class="p">(</span><span class="n">n</span><span class="o">=</span><span class="mi">10</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">genHmacs</span><span class="p">()</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">genPoints</span><span class="p">()</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">numerize</span><span class="p">()</span>
         
-        <span class="k">if</span> <span class="n">seed</span> <span class="o">==</span> <span class="bp">self</span><span class="o">.</span><span class="n">seed</span><span class="p">:</span>
-            <span class="bp">self</span><span class="o">.</span><span class="n">hmac</span> <span class="o">=</span> <span class="n">hmac</span>
-            
-        <span class="bp">self</span><span class="o">.</span><span class="n">data</span><span class="p">[</span><span class="s2">&quot;hmacs&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">hmac</span><span class="p">)</span>
-    
-        
-    <span class="k">def</span> <span class="nf">generateSeeds</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">n</span><span class="o">=</span><span class="mi">10000</span><span class="p">):</span>
+    <span class="k">def</span> <span class="nf">genSeeds</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">n</span><span class="o">=</span><span class="mi">10000</span><span class="p">):</span>
+        <span class="c1"># first, n seeds are needed</span>
         <span class="k">for</span> <span class="n">x</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">n</span><span class="p">):</span>
             <span class="p">(</span>
                 <span class="bp">self</span><span class="o">.</span><span class="n">data</span><span class="p">[</span><span class="s2">&quot;seeds&quot;</span><span class="p">]</span>
@@ -15703,34 +15704,43 @@ good
                         <span class="o">.</span><span class="n">sha256</span><span class="p">(</span><span class="nb">str</span><span class="o">.</span><span class="n">encode</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">data</span><span class="p">[</span><span class="s2">&quot;seeds&quot;</span><span class="p">][</span><span class="n">x</span><span class="p">]))</span>
                         <span class="o">.</span><span class="n">hexdigest</span><span class="p">())</span>
             <span class="p">)</span>
-            <span class="c1">#print(len(chain),chain[len(chain)-1])</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">data</span><span class="p">[</span><span class="s2">&quot;seeds&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">reverse</span><span class="p">()</span>
         
-        
-    <span class="k">def</span> <span class="nf">generateHmacs</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+    <span class="k">def</span> <span class="nf">genHmacs</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="c1">#hmacs for each seed</span>
         <span class="k">for</span> <span class="n">seed</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">data</span><span class="p">[</span><span class="s2">&quot;seeds&quot;</span><span class="p">]:</span>
-            <span class="n">hmacFromSeed</span><span class="p">(</span><span class="n">seed</span><span class="p">)</span>
+            <span class="p">(</span>
+                <span class="bp">self</span><span class="o">.</span><span class="n">data</span><span class="p">[</span><span class="s2">&quot;hmacs&quot;</span><span class="p">]</span>
+                <span class="o">.</span><span class="n">append</span><span class="p">(</span>
+                    <span class="n">hmac</span><span class="o">.</span><span class="n">new</span><span class="p">(</span>
+                        <span class="nb">str</span><span class="o">.</span><span class="n">encode</span><span class="p">(</span><span class="n">seed</span><span class="p">),</span>
+                        <span class="nb">str</span><span class="o">.</span><span class="n">encode</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">client_seed</span><span class="p">),</span>
+                        <span class="n">hashlib</span><span class="o">.</span><span class="n">sha256</span>
+                    <span class="p">)</span><span class="o">.</span><span class="n">hexdigest</span><span class="p">()</span>
+                <span class="p">)</span>
+            <span class="p">)</span>
+    
+    <span class="k">def</span> <span class="nf">genPoints</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">for</span> <span class="n">eachmac</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">data</span><span class="p">[</span><span class="s2">&quot;hmacs&quot;</span><span class="p">]:</span>
+            <span class="n">crash</span> <span class="o">=</span> <span class="n">Crash</span><span class="p">(</span><span class="n">eachmac</span><span class="p">)</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">data</span><span class="p">[</span><span class="s2">&quot;point&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">crash</span><span class="o">.</span><span class="n">point</span><span class="p">)</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">data</span><span class="p">[</span><span class="s2">&quot;good&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">crash</span><span class="o">.</span><span class="n">good</span><span class="p">)</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">data</span><span class="p">[</span><span class="s2">&quot;zeros&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">crash</span><span class="o">.</span><span class="n">zero</span><span class="p">)</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">data</span><span class="p">[</span><span class="s2">&quot;divbin&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">crash</span><span class="o">.</span><span class="n">decbin</span><span class="p">)</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">data</span><span class="p">[</span><span class="s2">&quot;divhex&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">crash</span><span class="o">.</span><span class="n">dechex</span><span class="p">)</span>
+                
+    <span class="k">def</span> <span class="nf">numerize</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="n">seeds</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">data</span><span class="p">[</span><span class="s2">&quot;seeds&quot;</span><span class="p">]</span>
+        <span class="n">hmacs</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">data</span><span class="p">[</span><span class="s2">&quot;hmacs&quot;</span><span class="p">]</span>
+        <span class="k">for</span> <span class="n">x</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">seeds</span><span class="p">)):</span>
+            <span class="n">seeds</span><span class="p">[</span><span class="n">x</span><span class="p">]</span> <span class="o">=</span> <span class="p">(</span><span class="nb">int</span><span class="p">(</span><span class="n">seeds</span><span class="p">[</span><span class="n">x</span><span class="p">],</span> <span class="mi">16</span><span class="p">)</span> <span class="o">/</span> <span class="bp">self</span><span class="o">.</span><span class="n">maxHash</span><span class="p">)</span> <span class="o">*</span> <span class="mi">100</span>
             
+        <span class="k">for</span> <span class="n">y</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">hmacs</span><span class="p">)):</span>
+            <span class="n">hmacs</span><span class="p">[</span><span class="n">y</span><span class="p">]</span> <span class="o">=</span> <span class="p">(</span><span class="nb">int</span><span class="p">(</span><span class="n">hmacs</span><span class="p">[</span><span class="n">y</span><span class="p">],</span> <span class="mi">16</span><span class="p">)</span> <span class="o">/</span> <span class="bp">self</span><span class="o">.</span><span class="n">maxHash</span><span class="p">)</span> <span class="o">*</span> <span class="mi">100</span>
             
-            
-            
-</pre></div>
-
-     </div>
-</div>
-</div>
-</div>
-
-</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
-<div class="jp-Cell-inputWrapper">
-<div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[56]:</div>
-<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
-     <div class="CodeMirror cm-s-jupyter">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">gist</span> <span class="o">=</span> <span class="p">{}</span>
-
-<span class="n">gist</span><span class="p">[</span><span class="s1">&#39;test&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="p">[</span><span class="n">item</span> <span class="k">for</span> <span class="n">item</span> <span class="ow">in</span> <span class="p">[</span><span class="s2">&quot;abc&quot;</span><span class="p">]]</span>
-<span class="n">gist</span><span class="p">[</span><span class="s1">&#39;test&#39;</span><span class="p">]</span> <span class="o">+=</span> <span class="p">[</span><span class="n">item</span> <span class="k">for</span> <span class="n">item</span> <span class="ow">in</span> <span class="p">[</span><span class="s2">&quot;def&quot;</span><span class="p">]]</span>
-<span class="n">gist</span><span class="p">[</span><span class="s1">&#39;test&#39;</span><span class="p">]</span>
+<span class="n">j</span> <span class="o">=</span> <span class="n">LearnBlaze</span><span class="p">(</span><span class="n">aleatory_captured_hashes</span><span class="p">[</span><span class="mi">0</span><span class="p">])</span>
+<span class="n">hf</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">(</span><span class="n">j</span><span class="o">.</span><span class="n">data</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">hf</span><span class="p">)</span>
 </pre></div>
 
      </div>
@@ -15746,15 +15756,185 @@ good
 <div class="jp-OutputArea-child">
 
     
-    <div class="jp-OutputPrompt jp-OutputArea-prompt">Out[56]:</div>
+    <div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
+
+
+<div class="jp-RenderedText jp-OutputArea-output" data-mime-type="text/plain">
+<pre>    good  point  zeros      seeds      hmacs      divbin     divhex
+0      0   1.10   0.00  27.085673   9.895421   99.981689  39.087384
+1      1   5.75   0.00  35.163409  82.757470  100.000000  72.880604
+2      0   1.32   0.00  81.502117  24.939593  100.000000  61.779111
+3      1   3.21   0.00  67.672630  69.067647   99.963378  65.821910
+4      1   8.39   0.00  40.134761  88.192162   99.218738  17.693052
+5      0   1.00   0.00  85.611052   0.691061   87.499809  19.260038
+6      0   1.01   0.00  27.905567   1.735060   93.542382  84.333442
+7      1   9.57   0.00  96.194418  89.645054   99.993896  62.811496
+8      0   1.07   0.00  22.289025   6.942892  100.000000  35.825562
+9      0   0.00   1.99  91.328709  50.027046   99.992370  71.216862
+10     1  13.56   0.00  61.800056  92.695540   99.597162  90.914513
+</pre>
+</div>
+</div>
+
+</div>
+
+</div>
+
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
+<div class="jp-Cell-inputWrapper">
+<div class="jp-InputArea jp-Cell-inputArea">
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[45]:</div>
+<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+     <div class="CodeMirror cm-s-jupyter">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">gist</span> <span class="o">=</span> <span class="p">[</span><span class="n">i</span><span class="o">*</span><span class="mi">2</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">10</span><span class="p">)]</span>
+<span class="n">gist</span><span class="o">.</span><span class="n">reverse</span><span class="p">()</span>
+<span class="n">gist</span>
+</pre></div>
+
+     </div>
+</div>
+</div>
+</div>
+
+<div class="jp-Cell-outputWrapper">
+
+
+<div class="jp-OutputArea jp-Cell-outputArea">
+
+<div class="jp-OutputArea-child">
+
+    
+    <div class="jp-OutputPrompt jp-OutputArea-prompt">Out[45]:</div>
 
 
 
 
 <div class="jp-RenderedText jp-OutputArea-output jp-OutputArea-executeResult" data-mime-type="text/plain">
-<pre>[&#39;abc&#39;, &#39;def&#39;]</pre>
+<pre>[18, 16, 14, 12, 10, 8, 6, 4, 2, 0]</pre>
 </div>
 
+</div>
+
+</div>
+
+</div>
+
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
+<div class="jp-Cell-inputWrapper">
+<div class="jp-InputArea jp-Cell-inputArea">
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[47]:</div>
+<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+     <div class="CodeMirror cm-s-jupyter">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">my</span> <span class="o">=</span> <span class="p">{</span><span class="s1">&#39;hm&#39;</span><span class="p">:</span><span class="n">gist</span><span class="p">}</span>
+<span class="n">my</span><span class="p">[</span><span class="s1">&#39;hm&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">reverse</span><span class="p">()</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">my</span><span class="p">[</span><span class="s1">&#39;hm&#39;</span><span class="p">])</span>
+</pre></div>
+
+     </div>
+</div>
+</div>
+</div>
+
+<div class="jp-Cell-outputWrapper">
+
+
+<div class="jp-OutputArea jp-Cell-outputArea">
+
+<div class="jp-OutputArea-child">
+
+    
+    <div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
+
+
+<div class="jp-RenderedText jp-OutputArea-output" data-mime-type="text/plain">
+<pre>[0, 2, 4, 6, 8, 10, 12, 14, 16, 18]
+</pre>
+</div>
+</div>
+
+</div>
+
+</div>
+
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
+<div class="jp-Cell-inputWrapper">
+<div class="jp-InputArea jp-Cell-inputArea">
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[64]:</div>
+<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+     <div class="CodeMirror cm-s-jupyter">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">aleSeed</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="n">aleatory_captured_hashes</span><span class="p">[</span><span class="mi">2</span><span class="p">],</span> <span class="mi">16</span><span class="p">)</span>
+<span class="n">maxSeed</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="s1">&#39;&#39;</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="s1">&#39;f&#39;</span> <span class="k">for</span> <span class="n">item</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">64</span><span class="p">)),</span> <span class="mi">16</span><span class="p">)</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="n">maxSeed</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">aleSeed</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">((</span><span class="n">aleSeed</span><span class="o">/</span><span class="n">maxSeed</span><span class="p">)</span><span class="o">*</span><span class="mi">100</span><span class="p">)</span>
+</pre></div>
+
+     </div>
+</div>
+</div>
+</div>
+
+<div class="jp-Cell-outputWrapper">
+
+
+<div class="jp-OutputArea jp-Cell-outputArea">
+
+<div class="jp-OutputArea-child">
+
+    
+    <div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
+
+
+<div class="jp-RenderedText jp-OutputArea-output" data-mime-type="text/plain">
+<pre>115792089237316195423570985008687907853269984665640564039457584007913129639935
+88764315148665137306502515484278877062271097950147356531454203321545738644557
+76.65835873013953
+</pre>
+</div>
+</div>
+
+</div>
+
+</div>
+
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
+<div class="jp-Cell-inputWrapper">
+<div class="jp-InputArea jp-Cell-inputArea">
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[134]:</div>
+<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+     <div class="CodeMirror cm-s-jupyter">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">aa</span> <span class="o">=</span> <span class="mf">9.5</span>
+<span class="n">distancias</span> <span class="o">=</span> <span class="p">[</span><span class="mf">14.9</span><span class="p">,</span> <span class="mf">14.9</span><span class="o">+</span><span class="mf">14.1</span><span class="p">]</span>
+<span class="n">gas</span> <span class="o">=</span> <span class="mi">7</span>
+<span class="n">retorno</span> <span class="o">=</span> <span class="mf">2.3</span>
+
+
+<span class="k">for</span> <span class="n">x</span> <span class="ow">in</span> <span class="n">distancias</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(((</span><span class="n">x</span> <span class="o">/</span> <span class="n">aa</span><span class="p">)</span> <span class="o">*</span> <span class="n">gas</span><span class="p">)</span> <span class="o">*</span> <span class="n">retorno</span><span class="p">)</span>
+</pre></div>
+
+     </div>
+</div>
+</div>
+</div>
+
+<div class="jp-Cell-outputWrapper">
+
+
+<div class="jp-OutputArea jp-Cell-outputArea">
+
+<div class="jp-OutputArea-child">
+
+    
+    <div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
+
+
+<div class="jp-RenderedText jp-OutputArea-output" data-mime-type="text/plain">
+<pre>25.251578947368422
+49.147368421052626
+</pre>
+</div>
 </div>
 
 </div>
