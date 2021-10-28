@@ -1,10 +1,11 @@
 #!/usr/bin/env python
 # coding: utf-8
 
-# In[91]:
+# In[1]:
 
 
 import pandas as pd
+import matplotlib.pyplot as plt
 import numpy as np
 import hmac
 import hashlib
@@ -340,7 +341,7 @@ print(f'{myTotal:,}')
 print((myHexInt/myTotal)*100)
 
 
-# In[114]:
+# In[20]:
 
 
 class Crash():
@@ -376,7 +377,7 @@ r = Crexi(rexi)
 r.hash
 
 
-# In[115]:
+# In[23]:
 
 
 w = Crash(rexi)
@@ -479,7 +480,7 @@ class Blaze:
             print('\n')
 
 
-# In[117]:
+# In[25]:
 
 
 class LearnBlaze:
@@ -498,7 +499,7 @@ class LearnBlaze:
             "divhex":[],
         }
         
-        self.genSeeds(n=10)
+        self.genSeeds()
         self.genHmacs()
         self.genPoints()
         self.numerize()
@@ -545,48 +546,43 @@ class LearnBlaze:
             
         for y in range(len(hmacs)):
             hmacs[y] = (int(hmacs[y], 16) / self.maxHash) * 100
-            
+"""
 j = LearnBlaze(aleatory_captured_hashes[0])
 hf = pd.DataFrame(j.data)
 print(hf)
+"""
 
 
-# In[45]:
+# In[30]:
 
 
-gist = [i*2 for i in range(10)]
-gist.reverse()
-gist
+#hf.to_pickle('./jdata.pkl')
+hf = pd.read_pickle('./jdata.pkl')
+hf
 
 
-# In[47]:
+# In[32]:
 
 
-my = {'hm':gist}
-my['hm'].reverse()
-print(my['hm'])
+last100, justGoods, justBads = ([], [], [])
+for x in range(10001-100):
+    last100.append(hf.good[x:100+x].sum())
+    justGoods.append(hf.good[:100+x].sum())
+    justBads.append((100+x) - hf.good[:100+x].sum())
+    
+tn = pd.DataFrame({
+    "lh":last100,
+    "jg":justGoods,
+    "jb":justBads,
+})
+tn
 
 
-# In[64]:
+# In[52]:
 
 
-aleSeed = int(aleatory_captured_hashes[2], 16)
-maxSeed = int(''.join('f' for item in range(64)), 16)
-
-print(maxSeed)
-print(aleSeed)
-print((aleSeed/maxSeed)*100)
-
-
-# In[134]:
-
-
-aa = 9.5
-distancias = [14.9, 14.9+14.1]
-gas = 7
-retorno = 2.3
-
-
-for x in distancias:
-    print(((x / aa) * gas) * retorno)
+un = 500
+plt.figure(figsize=(22, 8), dpi=150)
+plt.plot([i for i in range(un)], tn.lh[:un])
+plt.show()
 
